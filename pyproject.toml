@@ -1,0 +1,16 @@
+[project]
+name = "kmer-sim"
+version = "0.0.1"
+description = "Lightweight k-mer based similarity scoring."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Rob Walker" }]
+license = { text = "MIT" }
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
