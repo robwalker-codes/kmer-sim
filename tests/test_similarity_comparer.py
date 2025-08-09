@@ -1,11 +1,12 @@
-import math
-from kmer_sim import KmerComparer, JaccardMetric
+import pytest
 
-def test_identical_sequences_have_similarity_one():
-    comparer = KmerComparer(kmer_length=3, canonical=True, metric=JaccardMetric())
-    sequenceA = "ACGTACGT"
-    sequenceB = "ACGTACGT"
+def test_identical_sequences_have_similarity_one(make_comparer):
+    comparer = make_comparer()
+    sequence = "ACGTACGT"
     
-    score = comparer.compare(sequenceA, sequenceB)
+    assert comparer.compare(sequence, sequence) == 1.0
+
+def test_disjoint_sequences_have_zero(make_comparer):
+    comparer = make_comparer()
     
-    assert math.isclose(score, 1.0, rel_tol=0, abs_tol=1e-12)
+    assert comparer.compare("AAAAAA", "CCCCCC") == 0.0
