@@ -87,7 +87,7 @@ kmer-sim/
 ├── pyproject.toml
 ├── src/
 │ └── kmer_sim/
-│ ├── **init**.py
+│ ├── __init__.py
 │ ├── core.py
 │ ├── metrics.py
 │ └── io.py
@@ -97,7 +97,7 @@ kmer-sim/
 │ └── test_io.py
 ├── .gitignore
 └── requirements-dev.txt
-...
+```
 
 ---
 
@@ -127,4 +127,3 @@ MIT – free to use, modify, and distribute.
 ## Acknowledgements
 
 Inspired by common k-mer–based genomic approaches used in read-mapping, sketching, and sequence similarity tools.
-```
